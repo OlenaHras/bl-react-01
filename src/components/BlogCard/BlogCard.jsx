@@ -1,4 +1,3 @@
-
 import {
   Card,
   CardHeader,
@@ -12,8 +11,14 @@ import {
   Avatar,
   UserInfo,
   UserName,
-  Date,
+  DateStyle,
 } from './BlogCard.styled';
+
+import { formatDistanceToNow } from 'date-fns';
+const formatDateToNow = date => {
+  return formatDistanceToNow(new Date(date), {addSuffix: true})
+};
+
 export const BlogCard = ({
   poster,
   tag,
@@ -23,9 +28,7 @@ export const BlogCard = ({
   avatar,
   postedAt,
 }) => {
-  
-
-  return (
+   return (
     <div>
       <Card>
         <CardHeader>
@@ -46,7 +49,7 @@ export const BlogCard = ({
             <Avatar src={avatar} alt={userName} />
             <UserInfo>
               <UserName>{ userName}</UserName>
-              <Date>{postedAt}</Date>
+              <DateStyle>{formatDateToNow(postedAt)}</DateStyle>
             </UserInfo>
           </UserBox>
         </CardFooter>
