@@ -9,6 +9,7 @@ import {
 } from 'components';
 
 import article from 'data/article.json';
+import data from 'data/data.json';
 
 export const App = () => {
   return (
@@ -18,25 +19,23 @@ export const App = () => {
           Task 1
         </Heading>
         <BlogCard
-  poster={article.poster}
-  tag={article.tag}
-  title={article.title}
-  description={article.description}
-  userName={article.name}
-  avatar={article.avatar}
-  postedAt={article.postedAt}
-/>;
-
+          poster={article.poster}
+          tag={article.tag}
+          title={article.title}
+          description={article.description}
+          userName={article.name}
+          avatar={article.avatar}
+          postedAt={article.postedAt}
+        />
+        ;
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 2
         </Heading>
-        <Statistics />
-
+        <Statistics data={data} title="statistic-saction" />
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 3
         </Heading>
         <ForbesList />
-
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 4
         </Heading>
